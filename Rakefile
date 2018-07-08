@@ -8,7 +8,7 @@ end
   desc 'outputs hola to the terminal'
   task :hola do
     puts "hola de Rake!"
-end 
+end
 
 end
 
@@ -27,4 +27,9 @@ namespace :db do
   task :seed do
     require_relative './db/seeds.rb'
   end
+end
+
+desc 'drop into the Pry console'
+task :console => :environment do
+  Pry.start 
 end
